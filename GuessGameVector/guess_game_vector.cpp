@@ -1,66 +1,12 @@
 /*
 	Guess game that expects user to input a number in order to gueess.
 	The program stores the numbers typed by the user in a vector.
+	The program uses custom library in order to work with multiple separate cpp files. 
 */
 
-#include <iostream>
-#include <tchar.h>
-#include <ctime>
-#include <cstdlib>
-#include <vector>
+#include "guess_game_vec.h"
 
-
-void print_vector(std::vector <int> &vec){
-
-	for (int i = 0; i < vec.size(); i++)
-	{
-
-		std::cout<< vec[i]<<"\t";
-	}
-
-    std::cout<<"\n";
-
-}
-
-
-void playing_guess_game(){
-
-	std::vector <int> guesses;
-
-	int random = rand() % 251; //random number from 0 to 250
-
-	while(true)
-	{
-		int guess;
-
-		std::cin>>guess;
-
-		guesses.push_back(guess);
-
-		if (guess==random)
-		{
-
-			std::cout<< "You won!\n";
-			break;
-		}
-		else if (guess<random)
-		{
-				std::cout<<"Your number is lower. Try again\n";
-
-		}
-		else
-		{
-            std::cout<<"Your number is too high. Try again\n";
-		}
-
-	}
-	std::cout<<"The squence of guesses you used is: \n";
-	print_vector(guesses);
-	std::cout<<"It took you: "<<guesses.size()<< " guesses to win\n";
-
-}
-
-int _tmain(int argc, _TCHAR* argv[])
+int main()
 {
     srand(time(NULL)); //change the squence of numbers in order to generate random numbers
 	int choice;
