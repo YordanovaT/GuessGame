@@ -2,6 +2,8 @@
 	Guess game that expects user to input a number in order to gueess.
 	The program stores the numbers typed by the user in a vector and
     safes how many guesses it took him to guess the number in a text file.
+	The number of guesses in the text file will change if it is less than 
+	the guesses from the last execution of the program.
 */
 
 #include "guess_game.h"
@@ -27,7 +29,7 @@ int main()
 
 			case 1:
 
-				playing_guess_game();
+				play_game::playing_guess_game();
 
 				break;
 		}

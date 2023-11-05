@@ -8,8 +8,17 @@
     #include <limits>
     #include<vector>
 
-    void print_vector(std::vector <int> &vec);
-    void save_score(int guessed_count);
-    void playing_guess_game();
-
+    namespace print_vector
+    {
+        void print_vector(std::vector <int> &vec);
+    }
+    namespace save_score
+    {
+        void save_score(int guessed_count);
+    }
+    namespace play_game
+    {
+        void playing_guess_game();
+    }
+    
 #endif
